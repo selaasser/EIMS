@@ -1,4 +1,352 @@
-/* Styling the products section */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website with Slider and Products Highlights</title>
+    <style>
+        /* Reset default padding and margins */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        /* Main Navigation Bar Styling */
+.navbar {
+    background-color: white;
+    padding: 15px 0;
+    box-shadow: 0 4px 2px -2px #d1a980;
+    width: 100vw; /* Full viewport width */
+    position: fixed; /* Ensure the navbar stays at the top */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Keep it on top of all content */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px; /* Add padding to the container */
+}
+
+.logo a {
+    font-size: 24px;
+    font-weight: bold;
+    color: #e59866;
+    text-decoration: none;
+}
+
+.toggle-btn {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-links li a:hover {
+    color: #e59866;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+}
+
+.icons a {
+    color: #333;
+    margin-left: 20px;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.icons a:hover {
+    color: #e59866;
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    .toggle-btn {
+        display: block;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        display: none;
+        position: absolute;
+        background-color: white;
+        top: 60px; /* Adjust below the navbar */
+        left: 0;
+        width: 100vw;
+        box-shadow: 0 4px 2px -2px #d1a980;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .icons {
+        margin-top: 10px;
+    }
+}
+
+
+        /* Slider Section */
+.slider-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    width: 300%; /* 100% for each of 3 slides */
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Specific slides with background images */
+.slide-1 {
+    background-image: url('DALL·E 2024-10-07 13.23.50 - A detailed image of a person undergoing a cosmetic treatment, featuring a close-up view of their face. The syringe is less sharp, with rounded edges f (5).webp');
+}
+
+.slide-2 {
+    background-image: url('1f0f8bf8b5ed1a9abb73305137e0f4b2.jpg');
+}
+
+.slide-3 {
+    background-image: url('DALL·E 2024-10-07 13.23.50 - A detailed image of a person undergoing a cosmetic treatment, featuring a close-up view of their face. The syringe is less sharp, with rounded edges f (5).webp');
+}
+
+.slider-nav {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.slider-nav span {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin: 0 5px;
+    background-color: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.slider-nav span.active {
+    background-color: #333;
+}
+
+        /* Products Highlights Section */
+        .products {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .products h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .product {
+            width: 30%;
+            margin-bottom: 20px;
+            background-color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .product h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .product a {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .product a:hover {
+            background-color: #0056b3;
+        }
+
+        /* Responsive Design for Smaller Screens */
+        @media (max-width: 768px) {
+            .product {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <title>Company Information Banner</title> 
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .banner {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .banner-overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .banner-content {
+            position: relative;
+            max-width: 800px;
+            text-align: center;
+            color: white;
+            z-index: 2;
+        }
+
+        .banner-content h1 {
+            font-size: 48px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .banner-content p {
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            background-color: #FFD700;
+            border: none;
+            color: #333;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #ffbf00;
+        }
+
+        @media (max-width: 768px) {
+            .banner-content h1 {
+                font-size: 32px;
+            }
+
+            .banner-content p {
+                font-size: 16px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                margin-bottom: 10px;
+            }
+        }
+
+        /* Styling the products section */
+    .products {
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    .products h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    /* Styling the products section */
     .products {
         max-width: 1200px;
         margin: 40px auto;
@@ -67,3 +415,242 @@
             margin-bottom: 20px;
         }
     }
+    </style>
+</head>
+<body>
+    <style>
+    /* Footer Styling */
+.footer {
+    background-color: #2E2F4F;
+    color: white;
+    padding: 40px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.footer-section h3 {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.footer-section p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    font-size: 14px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.footer-section ul li i {
+    margin-right: 10px;
+    color: #FBAF3F;
+}
+
+.socials a {
+    margin-right: 10px;
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.socials a:hover {
+    color: #FBAF3F;
+}
+
+.app-links a img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+    border-top: 1px solid #444;
+    color: #ccc;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-section {
+        margin-bottom: 30px;
+    }
+
+    .socials {
+        justify-content: center;
+    }
+}
+</style>
+    <!-- Main Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="#">
+                    <img src="C:\Users\user\Desktop\images\Eims Logo.png" alt="Website Logo" style="height: 50px;">
+                </a>
+            </div>
+            <div class="toggle-btn" onclick="toggleMenu()">&#9776;</div>
+    
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#partners">Partners</a></li>
+            </ul>
+    
+            <div class="icons">
+                <a href="#"><i class="fas fa-search"></i></a>
+                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </div>
+    </nav>
+
+   <!-- Slider Section -->
+<div class="slider-container">
+    <div class="slides" id="slides">
+        <div class="slide slide-1"></div>
+        <div class="slide slide-2"></div>
+        <div class="slide slide-3"></div>
+    </div>
+    <div class="slider-nav" id="slider-nav">
+        <span class="nav-dot" onclick="moveToSlide(0)"></span>
+        <span class="nav-dot" onclick="moveToSlide(1)"></span>
+        <span class="nav-dot" onclick="moveToSlide(2)"></span>
+    </div>
+</div>
+
+
+   <!-- Products Highlights Section -->
+<div class="products">
+    <h2>Our Products</h2>
+    <table class="product-table">
+        <tr>
+            <!-- Product 1 -->
+            <td class="product">
+                <img src="C:\Users\user\Desktop\images\Screenshot 2024-10-07 231619.png" alt="Product 1">
+                <h3>Product 1</h3>
+                <a href="#" class="learn-more-btn">Learn More</a>
+            </td>
+            <!-- Product 2 -->
+            <td class="product">
+                <img src="C:\Users\user\Desktop\images\Screenshot 2024-10-07 231628.png" alt="Product 2">
+                <h3>Product 2</h3>
+                <a href="#" class="learn-more-btn">Learn More</a>
+            </td>
+            <!-- Product 3 -->
+            <td class="product">
+                <img src="C:\Users\user\Desktop\images\Screenshot 2024-10-07 231635.png" alt="Product 3">
+                <h3>Product 3</h3>
+                <a href="#" class="learn-more-btn">Learn More</a>
+            </td>
+        </tr>
+    </table>
+</div>
+
+    <!-- JavaScript for Slider -->
+    <script>
+        let currentSlide = 0;
+        const slides = document.getElementById('slides');
+        const navDots = document.getElementsByClassName('nav-dot');
+
+        function moveToSlide(slideIndex) {
+            currentSlide = slideIndex;
+            slides.style.transform = `translateX(-${currentSlide * 100}vw)`;
+            updateNavDots();
+        }
+
+        function updateNavDots() {
+            for (let i = 0; i < navDots.length; i++) {
+                navDots[i].classList.remove('active');
+            }
+            navDots[currentSlide].classList.add('active');
+        }
+
+        setInterval(function() {
+            currentSlide = (currentSlide + 1) % 3;
+            moveToSlide(currentSlide);
+        }, 3000);
+    </script>
+    <section class="banner">
+        <div class="banner-overlay"></div>
+        <div class="banner-content">
+            <h1>Our Mission</h1>
+            <p>To build generational wealth through real estate. We create and protect wealth for families by leveraging real estate investments, expert advice, and technology.</p>
+            <div class="buttons">
+                <button class="btn">Buy</button>
+    
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
+
+</body>
+</html><!-- Footer Section -->
+<footer class="footer">
+    <div class="footer-container">
+        <!-- Company Info -->
+        <div class="footer-section about">
+            <h3>foton.</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et nunc nunc. Etiam non dolor sit amet.</p>
+            <div class="socials">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-google-plus"></i></a>
+            </div>
+        </div>
+        <!-- Contact Info -->
+        <div class="footer-section contact-info">
+            <h3>Contact Info</h3>
+            <ul>
+                <li><i class="fas fa-map-marker-alt"></i> 113 Fulton Street, Suite 721</li>
+                <li><i class="fas fa-map-marker-alt"></i> New York, NY 10010</li>
+                <li><i class="fas fa-envelope"></i> youremail@yourdomain.com</li>
+                <li><i class="fas fa-phone"></i> +88 (0) 101 0000 000</li>
+            </ul>
+        </div>
+        <!-- Support & Downloads -->
+        <div class="footer-section support">
+            <h3>Support & Downloads</h3>
+            <p>Quisque arcu quam, suscipit et amet metus quis. Download our mobile apps:</p>
+            <div class="app-links">
+                <a href="#"><img src="images/app-store.png" alt="App Store"></a>
+                <a href="#"><img src="images/google-play.png" alt="Google Play"></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Copyright Mikado Themes</p>
+    </div>
+</footer>
+
+</body>
+</html>
